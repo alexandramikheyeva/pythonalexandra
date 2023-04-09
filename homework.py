@@ -1,6 +1,6 @@
 #1
 a = int(input('Введите число:'))
-b = int(input('Введите число:'))1
+b = int(input('Введите число:'))
 c = int(input('Введите число:'))
 a > 0 and b > 0 and c > 0 or 'False'
 print('Нет нулевых значений')
