@@ -18,3 +18,11 @@ if a < b + c:
     print(b + c - a)
 else:
     print('False')
+#5
+a = int(input('Введите число:'))
+b = int(input('Введите число:'))
+c = int(input('Введите число:'))
+if a > 50 and b > a or c > a:
+    print('Вася')
+else:
+    print('False')
