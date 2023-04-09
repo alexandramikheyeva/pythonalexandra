@@ -8,7 +8,8 @@ print(d)
 a = int(input('Введите число:'))
 b = int(input('Введите число:'))
 c = int(input('Введите число:'))
-
+d = a > 0 or b > 0 or c > 0 or 'Введены все нули'
+print(d)
 #3
 a = int(input('Введите число:'))
 b = int(input('Введите число:'))
