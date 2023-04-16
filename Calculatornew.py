@@ -1,8 +1,8 @@
 
 def print_valie_dict():
-    print(my_dict.get(input('Print key(id): ')))
+    print(dict.get(input('Print key(id): ')))
 
-    my_dict = {0:{'id':'a',
+    dict = {0:{'id':'a',
                   'age':'12',
                   'name':'123',
                   'gender':'male'},
@@ -22,22 +22,30 @@ def print_valie_dict():
     print_valie_dict()
 
 def print_menu_and_get_option():
-    print('1. Вывести список пользователей\n2: Посмотреть информацию\n3: Изменить данные\n4: Удалить пользователя\n5: Добавить пользователя')
-    option = input('Inter your choice: ')
+    print('Menu')
+    print('A. Вывести список пользователей')
+    print('B. Посмотреть информацию о пользователе')
+    print('C. Изменить данные о пользователе')
+    print('D. Удалить выбранного пользователя')
+    print('E. Добавить пользователя')
+    print('F. Выход')          
+    option = str(input('Inter your choice: '))
     clear_screen()
     return option
 
 def process_option(option):
-    if option == 1:
+    if option == str('A'):
         list_user()
-    elif option == 2:
+    elif option == str('B'):
         read_users()
-    elif option == 3:
+    elif option == str('C'):
         edit_users()
-    elif option == 4:
-            delete_user()
-    elif option == 5:
+    elif option == str('D'):
+        delete()
+    elif option == str('E'):
         create_user()
+    elif option == str('F'):
+        exit()
     clear_screen     
     return option
 import os
@@ -46,29 +54,34 @@ def clear_screen():
     os.system('clear')
 
 def list_user():
-    print()
-list_user()
+    print(dict.keys())
 
 def read_users():
-    print()
-read_users()
+    print_valie_dict = input('Введите id пользователя:')
+    print(dict.get(print_valie_dict))
 
 def edit_users():
-    print()
-edit_users()
+    dict[input('Введите id, которое хотите изменить')]
+    print(dict)
 
-def delete_user():
-    print()
-delete_user()
+def delete():
+    delete_user = input('Введите id пользователя, которого хотите удалить:')
+    print(dict.pop(delete_user))
 
 def create_user():
-    print()
-create_user()
+    key = input('Введите id:')
+    name = input('Введите Ваше имя')
+    floor = input('Введите ваш пол:')
+    age = input('Введите ваш возраст:')
+    height = float(input('Введите Ваш рост, см'))
+    weight = float(input('Введите ваш вес, кг:'))
+    dict[key] = [name, floor, age, height, weight]
+    print(dict)
 
 def main():
     while option != 'q':
         option = print_menu_and_get_option()
         process_option(option)
-        
-if __name__ == '__main__':
-   print_menu_and_get_option()
+
+
+
