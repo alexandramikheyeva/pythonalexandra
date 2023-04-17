@@ -79,9 +79,11 @@ def create_user():
     print(dict)
 
 def main():
-    while option != 'q':
+    while process_option != 'q':
         option = print_menu_and_get_option()
         process_option(option)
+
+main()
 
 
 
