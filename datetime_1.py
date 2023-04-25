@@ -128,4 +128,4 @@ output_number = {
 def clear_screen():
     os.system(clear_screen)
 
-    
+def new_hours():    
