@@ -1,8 +1,7 @@
 from datetime import datetime
 import os
 import time
-current_datetime = datetime.now()
-print(f'{current_datetime.hour}:{current_datetime.minute}:{current_datetime.second}')
+
 
 output_number =\
 {0:\
@@ -121,7 +120,7 @@ def null_check(our_number):
     first_number = 0
     second_number = our_number[0]
     our_number = [first_number, second_number]
-    return our_number
+  return our_number
 
 def new_hour(today_time):
   split_hour = [int(a) for a in str(today_time.hour)]
@@ -146,7 +145,7 @@ def new_second(today_time):
 
 def main():
   clear_screen()
-  today_time = current_datetime()
+  today_time = datetime.now()
   hour_1, hour_2 = new_hour(today_time)
   minute_1, minute_2 = new_minute(today_time)
   second_1, second_2 = new_second(today_time)
