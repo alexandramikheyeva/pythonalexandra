@@ -1,5 +1,6 @@
 from datetime import datetime
 import os
+import time
 current_datetime = datetime.now()
 print(f'{current_datetime.hour}:{current_datetime.minute}:{current_datetime.second}')
 
@@ -92,7 +93,7 @@ output_number =\
 }
 
 def clear_screen():
-  os.system(clear_screen)
+  os.system('CLS')
 
 def print_result(hour_1, hour_2, minute_1, minute_2, second_1, second_2):
   line_1 = hour_1.splitlines()
@@ -146,6 +147,14 @@ def new_second(today_time):
 def main():
   clear_screen()
   today_time = current_datetime()
+  hour_1, hour_2 = new_hour(today_time)
+  minute_1, minute_2 = new_minute(today_time)
+  second_1, second_2 = new_second(today_time)
+  print_result(hour_1, hour_2, minute_1, minute_2, second_1, second_2)
+  time.sleep(1)
+
+while True:
+  main()
   
 
                                           
