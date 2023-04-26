@@ -3,118 +3,94 @@ import os
 current_datetime = datetime.now()
 print(f'{current_datetime.hour}:{current_datetime.minute}:{current_datetime.second}')
 
-output_number=\
+output_number =\
 {0:\
-  """
-   ■■■■  
- ■■    ■■ 
-■■      ■■
-■■      ■■
- ■■    ■■ 
-   ■■■■  
-  """,
+    """
+    ■■■■■
+    ■   ■
+    ■   ■
+    ■   ■
+    ■■■■■""",
 1:\
-  """
-■■■■■■ 
-     ■■■
-■■■■■■ 
-     ■■■
-     ■■■
-■■■■■■
-""",
-
-
+    """
+      ■  
+     ■■  
+    ■ ■  
+      ■  
+    ■■■■■""",
 2:\
-"""
-  ■■■■■■  
-■■    ■■■
-     ■■■
-   ■■■   
- ■■■    
-■■■■■■■■■
-""",
+    """
+    ■■■■■
+    ■   ■
+      ■  
+    ■    
+    ■■■■■""",
 3:\
-  """
-■■■■■■ 
-     ■■■
-■■■■■■ 
-     ■■■
-     ■■■
-■■■■■■
-""",
+    """
+    ■■■■ 
+        ■
+      ■  
+        ■
+    ■■■■ """,
 4:\
-  """
-■■      ■■
-■■      ■■
-■■      ■■
-■■■■■■■■■■
-        ■■
-        ■■
-""",
+    """
+    ■   ■
+    ■   ■
+    ■ ■ ■
+        ■
+        ■""",
 5:\
-  """
-■■■■■■■■■
-■■        
-■■■■■■■■ 
-        ■■
-        ■■
-■■■■■■■■ 
-""",
+    """
+    ■■■■■
+    ■    
+    ■ ■ ■
+        ■
+    ■■■■■""",
 6:\
-  """
-■■■■■■■■
-■■        
-■■■■■■■■
-■■     ■■
-■■     ■■
- ■■■■■■■ 
-""",
+    """
+    ■■■■■
+    ■    
+    ■ ■ ■
+    ■   ■
+    ■■■■■""",
 7:\
-  """
- ■■■■■■■■■
-        ■■
-      ■■ 
-    ■■   
-    ■■   
-    ■■  
-""",
+    """
+    ■■■■■
+        ■
+      ■  
+      ■  
+      ■  """,
 8:\
-  """
-  ■■■■■■ 
-■■      ■■
-  ■■■■■■ 
-■■      ■■
-■■      ■■
-  ■■■■■■ 
-""",
+    """
+    ■■■■■
+    ■   ■
+    ■■■■■
+    ■   ■
+    ■■■■■""",
 9:\
-  """
-  ■■■■■■ 
-■■      ■■
-■■      ■■
-  ■■■■■■■■
-        ■■
-   ■■■■■■■
-""",
-'dot':\
-"""
-    ■■    
-    ■■    
-          
-          
-    ■■    
-    ■■    
-""",
-'nothing':\
-"""
-          
-          
-          
-          
-          
-          
-"""
+    """
+    ■■■■■
+    ■   ■
+    ■ ■ ■
+        ■
+    ■■■■■""",
+"dot":\
+    """
+         
+      ■  
+         
+      ■  
+         """,
+"nothing":\
+    """
+         
+         
+         
+         
+         """
+    
 }
+
 def clear_screen():
   os.system(clear_screen)
 
@@ -138,8 +114,13 @@ def print_result(hour_1, hour_2, minute_1, minute_2, second_1, second_2):
       print(f'{line_1[i]}, {line_2[i]}, {dot_new[i]}, {line_3[i]}, {line_4[i]}, \
             {dot_new[i]}, {line_5[i]}, {line_6[i]}')
   
-def null_check():
-  check_lenght = len(str())
+def null_check(our_number):
+  check_lenght = len(str(our_number))
+  if check_lenght == 3:
+    first_number = 0
+    second_number = our_number[0]
+    our_number = [first_number, second_number]
+    return our_number
 
 def new_hour(today_time):
   split_hour = [int(a) for a in str(today_time.hour)]
@@ -161,6 +142,12 @@ def new_second(today_time):
   new_split_second_1, new_split_second_2 = output_number[new_split_second[0]], \
   output_number[new_split_second[1]]
   return new_split_second_1, new_split_second_2
+
+def main():
+  clear_screen()
+  today_time = current_datetime()
+  
+
                                           
 
 
